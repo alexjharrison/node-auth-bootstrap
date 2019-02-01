@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import {Button} from 'reactstrap';
 import axios from 'axios';
 
 class Users extends Component {
@@ -39,7 +40,7 @@ class Users extends Component {
         {this.state.users.map(user=>{
             return (
                 <div key={user._id}>
-                <button onClick={()=>this.deleteUser(user._id)}>Delete</button>
+                <Button color="danger" size="sm" onClick={()=>this.deleteUser(user._id)}>Delete</Button>
                     <ul>
                         <li>Name: {user.name}</li>
                         <li>Email: {user.email}</li>
