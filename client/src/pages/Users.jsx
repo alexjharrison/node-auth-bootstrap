@@ -12,8 +12,8 @@ class Users extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://todo.aharrison.xyz:4521/api/users/').then(({ data }) => this.setState({ users: data }));
-        axios.get('http://todo.aharrison.xyz:4521/api/auth/me', {
+        axios.get('http://todo.aharrison.xyz/api/users/').then(({ data }) => this.setState({ users: data }));
+        axios.get('http://todo.aharrison.xyz/api/auth/me', {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
@@ -22,11 +22,11 @@ class Users extends Component {
 
     deleteUser = id => {
         console.log(id, this.state.myId)
-        axios.delete('http://todo.aharrison.xyz:4521/api/users/' + id, {
+        axios.delete('http://todo.aharrison.xyz/api/users/' + id, {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
-        }).then(({ data }) => axios.get('http://todo.aharrison.xyz:4521/api/users/').then(({ data }) => {
+        }).then(({ data }) => axios.get('http://todo.aharrison.xyz/api/users/').then(({ data }) => {
             if (id === this.state.myId) {
                 cookie.remove("x-access-token")
                 this.setState({ redirect: true })

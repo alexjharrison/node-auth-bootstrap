@@ -19,7 +19,7 @@ class ToDoItem extends Component {
 
     updateTodo = () => {
         const { newTodo } = this.state;
-        Axios.put('http://todo.aharrison.xyz:4521/api/todo/' + this.props.todo._id,
+        Axios.put('http://todo.aharrison.xyz/api/todo/' + this.props.todo._id,
             { todo: newTodo },
             {
                 headers: {

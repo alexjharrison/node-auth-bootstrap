@@ -19,7 +19,7 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const { email, password } = this.state;
-        Axios.post('http://todo.aharrison.xyz:4521/api/auth/login', { email, password })
+        Axios.post('http://todo.aharrison.xyz/api/auth/login', { email, password })
             .then(({ data }) => {
                 cookie.save('x-access-token', data.token)
                 this.setState({ redirect: true })
