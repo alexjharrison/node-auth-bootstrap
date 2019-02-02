@@ -20,7 +20,7 @@ class Home extends Component {
 
     addTodo = e => {
         e.preventDefault();
-        axios.post('http://localhost:4521/api/todo', {
+        axios.post('http://todo.aharrison.xyz:4521/api/todo', {
             todo: this.state.newTodo,
             public: false
         }, {
@@ -40,7 +40,7 @@ class Home extends Component {
     }
 
     getUserInfo = () => {
-        axios.get('http://localhost:4521/api/auth/me', {
+        axios.get('http://todo.aharrison.xyz:4521/api/auth/me', {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
@@ -56,7 +56,7 @@ class Home extends Component {
     }
 
     deleteTodoItem = id => {
-        axios.delete('http://localhost:4521/api/todo/' + id, {
+        axios.delete('http://todo.aharrison.xyz:4521/api/todo/' + id, {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
@@ -64,7 +64,7 @@ class Home extends Component {
     }
 
     getTodoItems = () => {
-        axios.get('http://localhost:4521/api/todo', {
+        axios.get('http://todo.aharrison.xyz:4521/api/todo', {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }

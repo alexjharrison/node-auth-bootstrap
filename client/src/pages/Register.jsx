@@ -19,7 +19,7 @@ class Register extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const { email, name, password } = this.state;
-        axios.post('http://localhost:4521/api/auth/register', { email, name, password })
+        axios.post('http://todo.aharrison.xyz:4521/api/auth/register', { email, name, password })
             .then(({ data }) => {
                 cookie.save("x-access-token", data.token);
                 this.setState({ toUsers: true });
