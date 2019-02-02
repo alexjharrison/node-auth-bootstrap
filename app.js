@@ -6,7 +6,7 @@ global.__root = __dirname + "/";
 
 app.use(cors());
 
-app.get("/api", function(req, res) {
+app.get("/api", function (req, res) {
   res.status(200).send("API works.");
 });
 
@@ -18,5 +18,7 @@ app.use("/api/auth", AuthController);
 
 var TodoController = require(__root + "todo/TodoController");
 app.use("/api/todo", TodoController);
+
+app.use(express.static(__dirname + '/client/build'));
 
 module.exports = app;
