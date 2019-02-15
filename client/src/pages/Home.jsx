@@ -20,7 +20,7 @@ class Home extends Component {
 
     addTodo = e => {
         e.preventDefault();
-        axios.post('http://todo.aharrison.xyz/api/todo', {
+        axios.post('httpss://node-auth.aharrison.xyz/api/node-auth', {
             todo: this.state.newTodo,
             public: false
         }, {
@@ -40,7 +40,7 @@ class Home extends Component {
     }
 
     getUserInfo = () => {
-        axios.get('http://todo.aharrison.xyz/api/auth/me', {
+        axios.get('httpss://node-auth.aharrison.xyz/api/auth/me', {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
@@ -56,7 +56,7 @@ class Home extends Component {
     }
 
     deleteTodoItem = id => {
-        axios.delete('http://todo.aharrison.xyz/api/todo/' + id, {
+        axios.delete('httpss://node-auth.aharrison.xyz/api/node-auth/' + id, {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
@@ -64,7 +64,7 @@ class Home extends Component {
     }
 
     getTodoItems = () => {
-        axios.get('http://todo.aharrison.xyz/api/todo', {
+        axios.get('httpss://node-auth.aharrison.xyz/api/node-auth', {
             headers: {
                 'x-access-token': cookie.load('x-access-token')
             }
@@ -94,7 +94,7 @@ class Home extends Component {
                     </CardBody>
                     <ListGroup>
                         {this.state.todoItems.map(todo => {
-                            return <ToDoItem getTodoItems={this.getTodoItems} handleDelete={this.deleteTodoItem} key={todo._id} todo={todo} />
+                            return <ToDoItem getTodoItems={this.getTodoItems} handleDelete={this.deleteTodoItem} key={todo._id} node-auth={todo} />
                         })}
                     </ListGroup>
                     <CardBody>
